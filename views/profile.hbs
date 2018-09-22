@@ -1,0 +1,34 @@
+<h1>Hola {{username}}</h1>
+
+<img src="{{photoURL}}" alt="PROFILE_PICTURE" id="photo">
+
+
+<button> 
+  <a href="/edit/{{_id}}">Edit</a> 
+</button>
+
+<button> 
+  <a href="/create_new">crear nota</a> 
+</button>
+
+<button> 
+  <a href="/login">Logout</a> 
+</button>
+
+<div>
+  <h2>notas</h2>
+  <div>
+    {{#each notitas}}
+    <h3>{{title}}</h3>
+    <p>{{body}}</p>
+    <img src="{{photo}}" alt="">
+    {{/each}}
+  </div>
+</div>
+
+
+<script>
+document.getElementById('photo').addEventListener('click', ()=>{
+  window.location.href = '/edit_image'
+})
+</script>
